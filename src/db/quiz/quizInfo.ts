@@ -1,5 +1,5 @@
 import { QueryError } from "mysql2";
-import { QuizInfo, QuizInfoData } from "../../model/quizInfo";
+import { QuizInfo } from "../../model/quizInfo";
 import db from "../index";
 
 const getAllQuizInfo = async () => {
@@ -8,11 +8,7 @@ const getAllQuizInfo = async () => {
         if(err){
             throw new Error("DB ERROR : getAllQuizInfo error occurred \n"+err);
         }else{
-            const resultData: QuizInfoData = {
-                ...result,
-                key_words: result.key_words.split(",")
-            }
-            return resultData;
+            return result;
         }
     })
 }
