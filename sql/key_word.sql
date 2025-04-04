@@ -1,6 +1,7 @@
 CREATE TABLE key_word(
     `id` bigint unsigned not null auto_increment primary key,
     `name` varchar(200) not null,
+    `alternative` varchar(512),
     `essential` boolean not null default false,
     `point` int not null default 0, /* 평가 점수 */
     `quiz_info_id` bigint unsigned not null,

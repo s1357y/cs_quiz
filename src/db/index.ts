@@ -9,4 +9,4 @@ const db = mysql.createConnection({
     database: "quiz"
 });
 
-export default db;
+export default db.promise();
